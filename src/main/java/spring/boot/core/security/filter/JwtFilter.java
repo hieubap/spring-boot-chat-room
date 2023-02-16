@@ -33,6 +33,9 @@ public class JwtFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
+//        if(!response.containsHeader("Access-Control-Allow-Credentials")){
+//            response.addHeader("Access-Control-Allow-Credentials","true");
+//        }
         JwtProvider jwtProvider = new JwtProvider(secretKey);
         String token = getJwtFromRequest(request);
         if (token != null) {

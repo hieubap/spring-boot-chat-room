@@ -55,8 +55,6 @@ public class JwtFilter extends OncePerRequestFilter {
                 ResponseUtil.writeResponse(HttpStatus.UNAUTHORIZED, response, responseMsg);
                 return;
             }
-
-
         }
         filterChain.doFilter(request, response);
     }
